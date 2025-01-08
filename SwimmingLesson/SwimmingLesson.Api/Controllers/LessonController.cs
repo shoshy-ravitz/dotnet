@@ -20,7 +20,7 @@ namespace SwimmingLesson.Api.Controllers
 
         // GET: api/<LessonController>
         [HttpGet]
-        public ActionResult<List<Lesson>> Get()
+        public IEnumerable<Lesson> Get()
         {
             return _lessonService.GetLessons();
         }

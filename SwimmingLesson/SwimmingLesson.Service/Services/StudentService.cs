@@ -42,7 +42,7 @@ namespace SwimmingLesson.Service.Services
 
         }
 
-        public List<Student> GetStudents()
+        public IEnumerable<Student> GetStudents()
         {
             return _studentReposetory.Get();
 

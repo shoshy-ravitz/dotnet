@@ -20,16 +20,8 @@ namespace SwimmingLesson.Data.Repository
         public bool Add(T obj)
         {
             _dbset.Add(obj);
-            //if (obj is Student)
-            //{
-            //    Console.WriteLine("++++++++++");
-            //    DataContext f = new DataContext();
-            //    f.Students.Add(new Student() { CodeCourse = 1, CodeGroup = 852122 });
-            //    Console.WriteLine(f.Students.ToList().ToArray());
-            //}
             return true;
         }
-
         public bool Delete(int code)
         {
             if(_dbset.Find(code)!=null)
@@ -39,17 +31,14 @@ namespace SwimmingLesson.Data.Repository
             }
             return false;
         }
-
-        public List<T> Get()
+        public IEnumerable<T> Get()
         {
            return _dbset.ToList();
         }
-
         public T? GetByCode(int code)
         {
             return _dbset.Find(code);
         }
-
         public bool Update(int id, T obj)
         {
 

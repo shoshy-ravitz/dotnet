@@ -37,7 +37,7 @@ namespace SwimmingLesson.Service.Services
             return _guideRepository.GetByCode(guideId);
         }
 
-        public List<Guide> GetGuides()
+        public IEnumerable<Guide> GetGuides()
         {
             return _guideRepository.Get();
         }

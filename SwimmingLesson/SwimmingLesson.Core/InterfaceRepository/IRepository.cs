@@ -9,7 +9,7 @@ namespace SwimmingLesson.Core.InterfaceRepository
 {
     public interface IRepository<T>
     {
-        public List<T> Get();
+        public IEnumerable<T> Get();
         public T GetByCode(int code);
         public bool Add(T obj);
         public bool Update(int id, T obj);

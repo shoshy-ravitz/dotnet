@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SwimmingLesson.Data;
 
@@ -11,9 +12,10 @@ using SwimmingLesson.Data;
 namespace SwimmingLesson.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250108113707_create-ForeigenKey11")]
+    partial class createForeigenKey11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,14 +143,14 @@ namespace SwimmingLesson.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CodeLesson"), 1L, 1);
 
-                    b.Property<int>("CodeGroup")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("DateLesson")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("FreeSwimming")
                         .HasColumnType("bit");
+
+                    b.Property<int?>("GroupCodeGroup")
+                        .HasColumnType("int");
 
                     b.Property<string>("LearntInLesson")
                         .IsRequired()
@@ -165,7 +167,7 @@ namespace SwimmingLesson.Data.Migrations
 
                     b.HasKey("CodeLesson");
 
-                    b.HasIndex("CodeGroup");
+                    b.HasIndex("GroupCodeGroup");
 
                     b.ToTable("Lessons");
                 });
@@ -257,13 +259,9 @@ namespace SwimmingLesson.Data.Migrations
 
             modelBuilder.Entity("SwimmingLessons.Entities.Lesson", b =>
                 {
-                    b.HasOne("SwimmingLessons.Entities.Group", "Group")
+                    b.HasOne("SwimmingLessons.Entities.Group", null)
                         .WithMany("Lessons")
-                        .HasForeignKey("CodeGroup")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Group");
+                        .HasForeignKey("GroupCodeGroup");
                 });
 
             modelBuilder.Entity("SwimmingLessons.Entities.Course", b =>

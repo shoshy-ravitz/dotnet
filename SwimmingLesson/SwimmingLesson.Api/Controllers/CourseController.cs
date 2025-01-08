@@ -17,7 +17,7 @@ namespace SwimmingLesson.Api.Controllers
         }
 
         [HttpGet]
-        public List<Course> Get()
+        public IEnumerable<Course> Get()
         {
             return _courseService.GetCourses();
         }

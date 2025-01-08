@@ -20,7 +20,7 @@ namespace SwimmingLesson.Api.Controllers
 
         // GET: api/<GroupController>
         [HttpGet]
-        public ActionResult<List<Group>> Get()
+        public IEnumerable<Group> Get()
         {
             return _groupService.GetGroups();
         }

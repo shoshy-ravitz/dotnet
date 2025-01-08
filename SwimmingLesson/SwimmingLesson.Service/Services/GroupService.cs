@@ -34,7 +34,7 @@ namespace SwimmingLesson.Service.Services
         {
             return _groupRepository.GetByCode(codeGroup);
         }
-        public List<Group> GetGroups()
+        public IEnumerable<Group> GetGroups()
         {
             return _groupRepository.Get();
         }

@@ -12,10 +12,10 @@ namespace SwimmingLesson.Service.Service
 {
     public class CourseService : ICourseService
     {
-         readonly IRepository<Course> _dataRepository;
+         readonly ICourseRepository _dataRepository;
         readonly IRepositoryManager<Course> _repositoryManager;
 
-        public CourseService(IRepository<Course> data, IRepositoryManager<Course> repositoryManager)
+        public CourseService(ICourseRepository data, IRepositoryManager<Course> repositoryManager)
         {
             _dataRepository = data;
             _repositoryManager = repositoryManager;
@@ -39,7 +39,7 @@ namespace SwimmingLesson.Service.Service
             return _dataRepository.GetByCode(CodeCourse);
         }
 
-        public List<Course> GetCourses()
+        public IEnumerable<Course> GetCourses()
         {
             return _dataRepository.Get();
         }

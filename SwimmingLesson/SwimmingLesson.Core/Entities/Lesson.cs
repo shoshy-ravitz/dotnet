@@ -14,5 +14,9 @@ namespace SwimmingLessons.Entities
         public DateTime? TimeEndLesson { get;set; }
         public bool FreeSwimming { get; set; }
         public string LearntInLesson { get; set; }
+        public int CodeGroup { get; set; } // Foreign key property
+
+        [ForeignKey(nameof(CodeGroup))]
+        public Group Group { get; set; }//one-to-many
     }
 }

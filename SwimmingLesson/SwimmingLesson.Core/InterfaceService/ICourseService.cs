@@ -9,7 +9,7 @@ namespace SwimmingLesson.Core.InterfaceService
 {
     public interface ICourseService
     {
-        public List<Course> GetCourses();
+        public IEnumerable<Course> GetCourses();
         public Course GetCourseByCode(int codeCourse);
         public bool AddCourse(Course course);
         public bool UpdateCourse(int courseId, Course course);

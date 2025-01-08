@@ -15,12 +15,9 @@ namespace SwimmingLesson.Api.Controllers
         {
             _guideService = guideService;
         }
-
-
-
         // GET: api/<GuideContoller>
         [HttpGet]
-        public ActionResult<List<Guide>> Get()
+        public IEnumerable<Guide> Get()
         {
             return _guideService.GetGuides();
         }

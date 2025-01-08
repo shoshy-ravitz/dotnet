@@ -9,10 +9,10 @@ namespace SwimmingLesson.Core.InterfaceRepository
 {
     public interface ICourseRepository
     {
-        public List<Course> GetCourses();
-        public Course GetCourseByCode(int CodeCourse);
-        public bool AddCourse(Course course);
-        public bool UpdateCourse(int CourseId, Course course);
-        public bool DeleteCourse(int CodeCourse);
+        public IEnumerable<Course> Get();
+        public Course GetByCode(int code);
+        public bool Add(Course obj);
+        public bool Update(int id, Course obj);
+        public bool Delete(int code);
     }
 }

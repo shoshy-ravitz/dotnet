@@ -9,7 +9,7 @@ namespace SwimmingLesson.Core.InterfaceService
 {
     public interface IGroupService
     {
-        public List<Group> GetGroups();
+        public IEnumerable<Group> GetGroups();
         public Group GetGroupByCode(int codeGroup);
         public bool AddGroup(Group group);
         public bool UpdateGroup(int groupId, Group group);

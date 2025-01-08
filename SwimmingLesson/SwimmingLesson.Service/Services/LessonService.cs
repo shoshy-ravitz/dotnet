@@ -38,7 +38,7 @@ namespace SwimmingLesson.Service.Services
             return _lessonRepository.GetByCode(codeLesson);
         }
 
-        public List<Lesson> GetLessons()
+        public IEnumerable<Lesson> GetLessons()
         {
             return _lessonRepository.Get();
         }
