@@ -1,0 +1,24 @@
+﻿{
+  "db": [
+    {
+      "CodeCourse": 1,
+      "CountLessons": 10,
+      "Price": 800
+    },
+    {
+      "CodeCourse": 1,
+      "CountLessons": 10,
+      "Price": 800
+    },
+    {
+      "CodeCourse": 1,
+      "CountLessons": 10,
+      "Price": 800
+    },
+    {
+      "CodeCourse": 1,
+      "CountLessons": 10,
+      "Price": 800
+    }
+  ]
+}
